@@ -1,4 +1,4 @@
-# TODO: Replicating Author (Year), "Title of the paper"
+# Replicating Lee (2008), "Randomized Experiments from Non-random Selection in U.S. House Elections"
 
 > **Template note, delete before you submit.** This is the ECON 5200 replication template.
 > Replace every line that starts with `TODO:`. The grader clones this repository into an
@@ -7,10 +7,10 @@
 
 ## The paper and its headline claim
 
-- **Paper:** TODO: full citation (authors, year, title, journal, volume, pages).
-- **Identification strategy:** TODO: difference-in-differences / instrumental variables / regression discontinuity / matching.
-- **Headline claim:** TODO: one sentence, with the number and where it is in the paper (for example, Table 2, column 3).
-- **My replication:** TODO: my number beside theirs, and the gap in percent, as `python reproduce.py` prints it.
+- **Paper:** Lee, D. S. (2008). Randomized experiments from non-random selection in U.S. House elections. *Journal of Econometrics* 142(2): 675–697.
+- **Identification strategy:** sharp regression discontinuity on the Democratic margin of victory in the previous election, centred at 50 percent of the two-party vote. Treatment is having won that previous election.
+- **Headline claim:** a party that narrowly wins a U.S. House election takes about 7.7 percentage points more of the two-party vote in the following election (Table 2, column 1).
+- **My replication:** **8.61 percentage points** (HC1 s.e. 0.69, N = 13,566) against the paper's 7.7, a gap of **+11.9%**, exactly as `python reproduce.py` prints it.
 
 ## Reproduce the headline table
 
@@ -29,12 +29,14 @@ it downloads the data if `data/` does not have it, runs `notebooks/01_positionin
 table from `output/headline_table.csv`. Executed copies of the notebooks, with their
 outputs, go to `output/executed/`.
 
-- **Expected runtime:** TODO: minutes on your machine, measured from a clean clone (the empty template runs in under a minute).
+- **Expected runtime:** about 5 seconds for the two notebooks once the environment is built (measured on a laptop from a clean clone); allow roughly a minute more for `pip install` and the 7 MB data download on the first run.
+
 
 ## Data: source and licence
 
-- **Source:** TODO: the URL in `download_data.py` for your paper, and who produced the original data.
-- **Included or downloaded:** TODO: say which, and why.
+- **Source:** `https://raw.githubusercontent.com/scunning1975/mixtape/master/lmb-data.dta`, downloaded by `download_data.py`. The file is the U.S. House elections panel compiled by Lee, Moretti and Butler (2004), *Quarterly Journal of Economics* 119(3): 807–859, from election returns for 1948–1990.
+- **Included or downloaded:** **downloaded, not committed.** `.gitignore` keeps `data/*.dta` out of the repository, and `download_data.py` fetches the file on the first run. The mixtape repository is under an MIT-style licence that would permit committing the file with its notice, but it is 7 MB of third-party data and there is no need to carry it in version control; the download keeps the repository small and the provenance explicit. The command to fetch it by hand is `python download_data.py --paper lee`.
+
 
 The template downloads by default: `.gitignore` excludes `data/*.dta`, and
 `download_data.py` fetches the files on the first run. Two facts to check before you
@@ -68,7 +70,7 @@ TODO: add a row for every file you add.
 
 ## Use of AI
 
-Sections 1 and 2 were completed without AI.
+Sections 1 and 2 were completed without AI. 
 
 TODO: list the sections where you used AI (from 3, 4, 5 and 6), for what, and point to the
 entries in [`ai-appendix.md`](ai-appendix.md). If you used none, say so.
