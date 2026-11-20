@@ -34,7 +34,6 @@ pip install -r requirements.txt
 Reproduction command for Table 1:
 
 ```bash
-jupyter nbconvert --to notebook --execute notebooks/01_positioning_and_replication.ipynb
 python reproduce.py
 ```
 
