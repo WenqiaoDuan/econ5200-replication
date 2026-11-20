@@ -35,6 +35,7 @@ Reproduction command for Table 1:
 
 ```bash
 jupyter nbconvert --to notebook --execute notebooks/01_positioning_and_replication.ipynb
+python reproduce.py
 ```
 
 - **Expected runtime:** approximately 25 seconds, as reported in Section 6 of the replication report.
